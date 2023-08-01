@@ -9,10 +9,10 @@ function getUsers()
     if (($handle = fopen(__DIR__ . "/../data/users.csv", "r")) !== false) {
         while (($data = fgetcsv($handle, 1000, ",")) !== false) {
             $users[] = [
-                "name" => $data[0],
-                "surname" => $data[1],
-                "email" => $data[2],
-                "password" => $data[3]
+                "name" => trim($data[0]),
+                "surname" => trim($data[1]),
+                "email" => trim($data[2]),
+                "password" => trim($data[3])
             ];
         }
 

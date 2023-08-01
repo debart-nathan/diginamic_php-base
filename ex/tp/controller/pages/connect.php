@@ -4,7 +4,7 @@
     <form class="d-flex flex-column" action="/connect" method="POST">
         <label class="d-flex justify-content-between m-2" >
             <span class="mx-2">e-mail :</span>
-            <input name="mail" type="mail" required>
+            <input name="user" type="mail" required>
         </label>
         <label class="d-flex justify-content-between m-2">
             <span class="mx-2">password : </span>
