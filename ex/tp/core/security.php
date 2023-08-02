@@ -42,6 +42,7 @@ function isConnected()
  */
 function disconnect()
 {
+    session_start();
     if (isset($_SESSION['user'])) {
         session_destroy();
     }
@@ -58,7 +59,6 @@ function searchUser($mail, $pwd)
 {
     $users = getUsers();
     foreach ($users as $user) {
-        echo PHP_EOL ." mail: '".$user['email']."' == '$mail' , pwd : '".$user['email']."' == '$pwd' </br>" ;
         if ($user['email'] == $mail && $user['password'] == $pwd){
             return true;
         }

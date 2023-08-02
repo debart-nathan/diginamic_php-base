@@ -82,15 +82,19 @@ function renderTabUsers($users, $sort, $order)
 }
 
 
-//TODO add connection test
+if (isConnected()) {
+    $sort = "name";
+    $order = "asc";
+    if (isset($_GET["sort"]) && isset($_GET["sort_order"])) {
+        $sort = $_GET["sort"];
+        $order = $_GET["sort_order"];
+    }
 
-$sort = "name";
-$order = "asc";
-if (isset($_GET["sort"]) && isset($_GET["sort_order"])) {
-    $sort = $_GET["sort"];
-    $order = $_GET["sort_order"];
+    $users = getUsers();
+    SortTable($users, $sort, $order);
+    renderTabUsers($users, $sort, $order);
+} else {
+    echo PHP_EOL . '<div class="">
+            Vous devez être connecter pour visualiser cette page.
+        </div>';
 }
-
-$users = getUsers();
-SortTable($users, $sort, $order);
-renderTabUsers($users, $sort, $order);
