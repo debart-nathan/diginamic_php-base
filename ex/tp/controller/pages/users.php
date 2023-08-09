@@ -1,4 +1,6 @@
-<h2>Les membres</h2>
+<div class="pb-2 mt-4 mb-2 border-bottom"">
+    <h2>Les membres</h2>
+</div>
 
 <?php
 require_once __DIR__ . "/../../src/utils/getData.php";
